@@ -19,7 +19,7 @@
   .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
   .logo{font-size:22px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:10px}
   .logo .mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--royal),var(--navy));color:#fff;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;letter-spacing:.02em;box-shadow:0 4px 12px rgba(27,106,201,.35)}
-  .logo .wm{color:var(--royal)}
+  .logo .wm{color:var(--royal)} .logo .mark-photo{width:38px;height:38px;border-radius:12px;object-fit:cover;box-shadow:0 4px 12px rgba(27,106,201,.35);border:2px solid rgba(79,195,247,.65)}
   .nav-links a{margin-left:26px;color:var(--navy);font-weight:600;font-size:15px}
   .nav-links a:hover{color:var(--royal)}
   /* Hero */
@@ -76,13 +76,13 @@
   @media(max-width:640px){.glass-form .frow{grid-template-columns:1fr}}
   footer{background:var(--navy);color:#9db8cc;text-align:center;padding:26px 0;font-size:14px}
   @media(max-width:640px){.hero h1{font-size:32px}.nav-links{display:none}}
-</style>
+/* Glass visibility upgrade — gradient backdrop so the frosted glass reads */ body{background:radial-gradient(620px 420px at 12% 8%,rgba(79,195,247,.38),transparent 62%),radial-gradient(760px 520px at 88% 88%,rgba(27,106,201,.30),transparent 62%),radial-gradient(420px 300px at 82% 12%,rgba(79,195,247,.24),transparent 60%),linear-gradient(165deg,#e9f4fd 0%,#f8fcff 42%,#d8ecfa 100%);background-attachment:fixed} .section-light{background:rgba(234,244,251,.45)} .card,.service,.practice,.note,.method,.glass-form{background:rgba(255,255,255,.58);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 12px 32px rgba(10,37,64,.10)} .service,.note,.method{border-left:6px solid var(--royal)} </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <div class="logo"><span class="mark">FH</span>Fuad<span class="wm">Hasan</span></div>
+    <div class="logo"><img class="mark-photo" src="data:image/jpeg;base64,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" alt="Fuad Hasan">Fuad<span class="wm">Hasan</span></div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="google-ads-audit.html">Audit</a>
