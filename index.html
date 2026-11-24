@@ -116,6 +116,12 @@
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--royal);transition:width .3s ease}
   .nav-links a:hover::after{width:100%}
   @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+  .price-teaser{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-bottom:22px}
+  .pt .pname{color:var(--royal);font-weight:800;font-size:12px;letter-spacing:.09em;text-transform:uppercase}
+  .pt h3{color:var(--navy);font-size:19px;margin:6px 0 4px}
+  .pt .amount{font-size:34px;font-weight:900;color:var(--navy);line-height:1.1}
+  .pt .delivery{color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
@@ -182,6 +188,20 @@
       <p>Search campaigns built around patient intent — implants, All-on-4, veneers, Invisalign — with tight location targeting and honest reporting on what the data actually shows.</p>
       <a class="scope" href="campaign-management.html">View full scope →</a>
     </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="wrap">
+    <h2>Pricing, up front</h2>
+    <p class="lead">No "book a call to find out". The free mini-audit comes first — and if we go further, these are the packages.</p>
+    <div class="price-teaser">
+      <div class="card pt"><div class="pname">Basic</div><h3>Landing Page Audit</h3><div class="amount">$35</div><div class="delivery">Delivery: 3 days</div></div>
+      <div class="card pt"><div class="pname">Standard</div><h3>Landing Page + Google Ads Audit</h3><div class="amount">$65</div><div class="delivery">Delivery: 5 days</div></div>
+      <div class="card pt"><div class="pname">Premium</div><h3>Full Audit + Competitor + Video</h3><div class="amount">$120</div><div class="delivery">Delivery: 7 days</div></div>
+    </div>
+    <p><a class="btn btn-primary" href="pricing.html">See Full Packages</a></p>
   </div>
 </section>
 
