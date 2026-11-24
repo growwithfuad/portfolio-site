@@ -11,42 +11,59 @@
     --sky:#4fc3f7; --pale:#eaf4fb; --ink:#10222e; --muted:#4a6070; --white:#ffffff;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Segoe UI',Arial,Helvetica,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+  body{font-family:'Segoe UI',Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#f2f9ff 0%,#ffffff 340px);line-height:1.6}
   a{text-decoration:none}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  header{background:var(--white);border-bottom:1px solid #dcebf5;position:sticky;top:0;z-index:10}
+  /* Header */
+  header{background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(27,106,201,.14);position:sticky;top:0;z-index:10}
   .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
-  .logo{font-size:22px;font-weight:800;color:var(--navy)}
-  .logo span{color:var(--royal)}
+  .logo{font-size:22px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:10px}
+  .logo .mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--royal),var(--navy));color:#fff;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;letter-spacing:.02em;box-shadow:0 4px 12px rgba(27,106,201,.35)}
+  .logo .wm{color:var(--royal)}
   .nav-links a{margin-left:26px;color:var(--navy);font-weight:600;font-size:15px}
   .nav-links a:hover{color:var(--royal)}
-  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#103a5c 100%);color:var(--white);padding:84px 0 76px}
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#103a5c 100%);color:var(--white);padding:84px 0 76px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(79,195,247,.35),rgba(79,195,247,0) 70%);filter:blur(40px);top:-160px;right:-120px;pointer-events:none}
+  .hero::after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(27,106,201,.45),rgba(27,106,201,0) 70%);filter:blur(50px);bottom:-180px;left:-100px;pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
   .page-hero{padding:64px 0 56px}
   .hero .tag{display:inline-block;background:rgba(79,195,247,.16);color:var(--sky);border:1px solid rgba(79,195,247,.45);
     padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
   .hero h1{font-size:42px;line-height:1.15;font-weight:900;margin:22px 0 18px;max-width:760px}
   .hero h1 em{font-style:normal;color:var(--sky)}
   .hero p{font-size:19px;color:#cfe3f2;max-width:640px;margin-bottom:32px}
-  .btn{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:700;font-size:16px}
-  .btn-primary{background:var(--royal);color:var(--white)}
+  .btn{display:inline-block;padding:14px 30px;border-radius:12px;font-weight:700;font-size:16px}
+  .btn-primary{background:var(--royal);color:var(--white);box-shadow:0 6px 18px rgba(27,106,201,.35)}
   .btn-primary:hover{background:var(--royal-dark)}
   .btn-ghost{border:2px solid var(--sky);color:var(--sky);margin-left:12px}
   .btn-ghost:hover{background:rgba(79,195,247,.12)}
+  /* Sections */
   section{padding:72px 0}
   .section-light{background:var(--pale)}
   h2{font-size:32px;font-weight:900;color:var(--navy);margin-bottom:14px}
   .lead{color:var(--muted);font-size:18px;max-width:720px;margin-bottom:38px}
   .story p{color:var(--muted);font-size:17px;max-width:760px;margin-bottom:16px}
+  /* Cards */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-  .card{background:var(--white);border:1px solid #dcebf5;border-radius:14px;padding:26px;box-shadow:0 4px 14px rgba(10,37,64,.05)}
+  .card{background:rgba(255,255,255,.75);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(79,195,247,.35);border-radius:18px;padding:26px;box-shadow:0 8px 24px rgba(10,37,64,.07)}
   .card .num{width:40px;height:40px;border-radius:50%;background:var(--royal);color:#fff;font-weight:800;
     display:flex;align-items:center;justify-content:center;margin-bottom:14px}
   .card h3{color:var(--navy);font-size:19px;margin-bottom:8px}
   .card p{color:var(--muted);font-size:15px}
-  .sig-card{background:linear-gradient(135deg,var(--navy),#103a5c);border-radius:16px;padding:44px;text-align:center;color:#fff}
+  /* Signature */
+  .sig-card{background:linear-gradient(135deg,var(--navy),#103a5c);border:1px solid rgba(79,195,247,.35);border-radius:20px;padding:44px;text-align:center;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 12px 32px rgba(10,37,64,.25)}
   .sig-card .name{font-size:36px;font-weight:900;margin-bottom:6px}
   .sig-card .role{color:var(--sky);font-weight:700;font-size:17px;margin-bottom:14px}
   .sig-card p{color:#cfe3f2;max-width:560px;margin:0 auto}
+  /* Contact form */
+  .glass-form{background:rgba(255,255,255,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(79,195,247,.4);border-radius:20px;padding:30px;box-shadow:0 10px 30px rgba(10,37,64,.08);max-width:760px}
+  .glass-form .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .glass-form input,.glass-form textarea{width:100%;padding:13px 15px;margin-bottom:14px;border:1px solid #cfe3f2;border-radius:12px;font:inherit;font-size:15px;background:rgba(255,255,255,.9);color:var(--ink)}
+  .glass-form input:focus,.glass-form textarea:focus{outline:2px solid var(--sky);border-color:var(--royal)}
+  .glass-form .fnote{margin-top:14px;color:var(--muted);font-size:14px}
+  .glass-form .fnote a{color:var(--royal);font-weight:700}
+  @media(max-width:640px){.glass-form .frow{grid-template-columns:1fr}}
   footer{background:var(--navy);color:#9db8cc;text-align:center;padding:26px 0;font-size:14px}
   @media(max-width:640px){.hero h1{font-size:32px}.nav-links{display:none}}
 </style>
@@ -55,7 +72,7 @@
 
 <header>
   <div class="wrap nav">
-    <div class="logo">Fuad<span>Hasan</span></div>
+    <div class="logo"><span class="mark">FH</span>Fuad<span class="wm">Hasan</span></div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="google-ads-audit.html">Audit</a>
@@ -117,6 +134,26 @@
       <p>Implants &amp; cosmetic dentistry · Research-first audits and campaigns · Observation before hypothesis, always.</p>
       <p style="margin-top:26px"><a class="btn btn-primary" href="contact.html">Start with a Conversation</a></p>
     </div>
+  </div>
+</section>
+
+<section class="section-light" style="padding-top:56px;padding-bottom:56px">
+  <div class="wrap">
+    <h2>Send me a message</h2>
+    <p class="lead">Tell me a little about your clinic and what you're trying to fix. I reply personally — usually with an observation first.</p>
+    <form class="glass-form" action="https://formsubmit.co/grow.with.fuad@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from portfolio website">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none">
+      <div class="frow">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+      </div>
+      <input type="url" name="clinic_website" placeholder="Your clinic website (optional)">
+      <textarea name="message" rows="4" placeholder="What would you like to improve?" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <p class="fnote">This form emails me directly. Prefer LinkedIn? <a href="contact.html">See contact options</a>.</p>
+    </form>
   </div>
 </section>
 
