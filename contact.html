@@ -19,7 +19,8 @@
   .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
   .logo{font-size:22px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:10px}
   .logo .mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--royal),var(--navy));color:#fff;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;letter-spacing:.02em;box-shadow:0 4px 12px rgba(27,106,201,.35)}
-  .logo .wm{color:var(--royal)} .logo .mark-photo{width:38px;height:38px;border-radius:12px;object-fit:cover;box-shadow:0 4px 12px rgba(27,106,201,.35);border:2px solid rgba(79,195,247,.65)}
+  .logo .wm{color:var(--royal)}
+  .logo .mark-photo{width:38px;height:38px;border-radius:12px;object-fit:cover;box-shadow:0 4px 12px rgba(27,106,201,.35);border:2px solid rgba(79,195,247,.65)}
   .nav-links a{margin-left:26px;color:var(--navy);font-weight:600;font-size:15px}
   .nav-links a:hover{color:var(--royal)}
   /* Hero */
@@ -58,24 +59,51 @@
   /* Contact form */
   .glass-form{background:rgba(255,255,255,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(79,195,247,.4);border-radius:20px;padding:30px;box-shadow:0 10px 30px rgba(10,37,64,.08);max-width:760px}
   .glass-form .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .glass-form input,.glass-form textarea{width:100%;padding:13px 15px;margin-bottom:14px;border:1px solid #cfe3f2;border-radius:12px;font:inherit;font-size:15px;background:rgba(255,255,255,.9);color:var(--ink)}
-  .glass-form input:focus,.glass-form textarea:focus{outline:2px solid var(--sky);border-color:var(--royal)}
+  .glass-form input,.glass-form textarea,.glass-form select{width:100%;padding:13px 15px;margin-bottom:14px;border:1px solid #cfe3f2;border-radius:12px;font:inherit;font-size:15px;background:rgba(255,255,255,.9);color:var(--ink)}
+  .glass-form input:focus,.glass-form textarea:focus,.glass-form select:focus{outline:2px solid var(--sky);border-color:var(--royal)}
   .glass-form .fnote{margin-top:14px;color:var(--muted);font-size:14px}
   .glass-form .fnote a{color:var(--royal);font-weight:700}
   @media(max-width:640px){.glass-form .frow{grid-template-columns:1fr}}
   footer{background:var(--navy);color:#9db8cc;text-align:center;padding:26px 0;font-size:14px}
   @media(max-width:640px){.hero h1{font-size:32px}.nav-links{display:none}}
-/* Glass visibility upgrade — gradient backdrop so the frosted glass reads */ body{background:radial-gradient(620px 420px at 12% 8%,rgba(79,195,247,.38),transparent 62%),radial-gradient(760px 520px at 88% 88%,rgba(27,106,201,.30),transparent 62%),radial-gradient(420px 300px at 82% 12%,rgba(79,195,247,.24),transparent 60%),linear-gradient(165deg,#e9f4fd 0%,#f8fcff 42%,#d8ecfa 100%);background-attachment:fixed} .section-light{background:rgba(234,244,251,.45)} .card,.service,.practice,.note,.method,.glass-form{background:rgba(255,255,255,.58);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 12px 32px rgba(10,37,64,.10)} .service,.note,.method{border-left:6px solid var(--royal)} </style>
+
+  /* Glass visibility upgrade — gradient backdrop so the frosted glass reads */
+  body{background:radial-gradient(620px 420px at 12% 8%,rgba(79,195,247,.38),transparent 62%),radial-gradient(760px 520px at 88% 88%,rgba(27,106,201,.30),transparent 62%),radial-gradient(420px 300px at 82% 12%,rgba(79,195,247,.24),transparent 60%),linear-gradient(165deg,#e9f4fd 0%,#f8fcff 42%,#d8ecfa 100%);background-attachment:fixed}
+  .section-light{background:rgba(234,244,251,.45)}
+  .card,.service,.practice,.note,.method,.glass-form{background:rgba(255,255,255,.58);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 12px 32px rgba(10,37,64,.10)}
+  .service,.note,.method{border-left:6px solid var(--royal)}
+
+  /* Motion — entrance, scroll reveal, hover */
+  html{scroll-behavior:smooth}
+  @keyframes riseIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  @keyframes popIn{from{opacity:0;transform:scale(.94) translateY(14px)}to{opacity:1;transform:none}}
+  .hero .tag{animation:riseIn .7s cubic-bezier(.22,.9,.3,1) both}
+  .hero h1{animation:riseIn .8s cubic-bezier(.22,.9,.3,1) .08s both}
+  .hero p{animation:riseIn .8s cubic-bezier(.22,.9,.3,1) .18s both}
+  .hero .btn{animation:riseIn .8s cubic-bezier(.22,.9,.3,1) .28s both}
+  .hero-photo img{animation:popIn .9s cubic-bezier(.22,.9,.3,1) .2s both}
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.9,.3,1)}
+  .rv-in{opacity:1;transform:none}
+  .card,.service,.price-card,.practice,.note,.method{transition:transform .35s ease,box-shadow .35s ease,opacity .7s ease}
+  .card:hover,.service:hover,.price-card:hover,.practice:hover,.note:hover,.method:hover{transform:translateY(-6px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 20px 42px rgba(10,37,64,.16)}
+  .btn{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .nav-links a{position:relative;transition:color .25s ease}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--royal);transition:width .3s ease}
+  .nav-links a:hover::after{width:100%}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <div class="logo"><img class="mark-photo" src="data:image/jpeg;base64,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" alt="Fuad Hasan">Fuad<span class="wm">Hasan</span></div>
+    <div class="logo"><img class="mark-photo" src="data:image/jpeg;base64,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" alt="Fuad Hasan">Fuad<span class="wm">Hasan</span></div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="google-ads-audit.html">Audit</a>
       <a href="campaign-management.html">Campaigns</a>
+      <a href="pricing.html">Pricing</a>
       <a href="about.html">About</a>
       <a href="learn.html">Learn</a>
       <a href="contact.html">Contact</a>
@@ -87,7 +115,7 @@
   <div class="wrap">
     <span class="tag">Contact</span>
     <h1>Start with a <em>conversation</em></h1>
-    <p>No form, no funnel tricks. Two simple ways to reach me — and a clear picture of what happens next if you do.</p>
+    <p>No form, no funnel tricks. Two simple ways to reach me — and a clear picture of what happens next if you do. And wherever your clinic is in the world, you are welcome: my focus is Australia, but the method travels.</p>
   </div>
 </div>
 
@@ -129,10 +157,32 @@
       <input type="hidden" name="_template" value="table">
       <input type="text" name="_honey" style="display:none">
       <div class="frow">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
+        <input type="text" name="first_name" placeholder="First name" required>
+        <input type="text" name="last_name" placeholder="Last name" required>
       </div>
-      <input type="url" name="clinic_website" placeholder="Your clinic website (optional)">
+      <input type="email" name="email" placeholder="Your email" required>
+      <div class="frow">
+        <select name="interest" required>
+          <option value="" selected disabled>I am interested in...</option>
+          <option>Free mini-audit</option>
+          <option>Landing Page Audit - Basic ($35)</option>
+          <option>Landing Page + Google Ads Audit - Standard ($65)</option>
+          <option>Full Audit + Competitor + Video - Premium ($120)</option>
+          <option>Campaign setup &amp; management</option>
+          <option>Just a question</option>
+        </select>
+        <select name="running_ads">
+          <option value="" selected disabled>Running Google Ads now?</option>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="frow">
+        <input type="tel" name="whatsapp" placeholder="WhatsApp number (optional)">
+        <input type="url" name="clinic_website" placeholder="Your clinic website (optional)">
+      </div>
+      <input type="text" name="clinic_location" placeholder="Clinic country &amp; city (e.g. Australia, Perth)">
       <textarea name="message" rows="4" placeholder="What would you like to improve?" required></textarea>
       <button type="submit" class="btn btn-primary">Send Message</button>
       <p class="fnote">This form emails me directly — or use LinkedIn or email above.</p>
@@ -151,5 +201,26 @@
   <div class="wrap">© 2026 Fuad Hasan · Google Ads Specialist for Dental Clinics</div>
 </footer>
 
+
+<script>
+(function(){
+  var els = document.querySelectorAll('section .card, section .service, section .price-card, section .practice, section .note, section .method, section .glass-form, section h2, section .lead, .break-card, .sig-card, .contact-box');
+  els.forEach(function(el){ el.classList.add('rv'); });
+  if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('rv-in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var sibs = Array.prototype.slice.call(e.target.parentNode.children).filter(function(c){ return c.classList && c.classList.contains('rv'); });
+        var i = sibs.indexOf(e.target);
+        e.target.style.transitionDelay = Math.min(i,5)*0.08 + 's';
+        e.target.classList.add('rv-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.12});
+  els.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ els.forEach(function(el){ el.classList.add('rv-in'); }); }, 2500);
+})();
+</script>
 </body>
 </html>
