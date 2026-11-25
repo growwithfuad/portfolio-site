@@ -215,7 +215,7 @@
   .card,.service,.practice,.note,.method,.glass-form,.price-card,.break-card,.contact-box,.sig-card{background:linear-gradient(150deg,rgba(255,255,255,.72),rgba(255,255,255,.42) 46%,rgba(234,244,251,.55));border:1px solid rgba(255,255,255,.75);box-shadow:0 10px 28px rgba(10,37,64,.10),inset 0 1px 0 rgba(255,255,255,.9)}
   .card::before,.service::before,.practice::before,.note::before,.method::before,.glass-form::before,.price-card::before,.break-card::before,.contact-box::before,.sig-card::before{background:linear-gradient(150deg,rgba(255,255,255,.95),rgba(27,106,201,.35) 40%,rgba(79,195,247,.6));opacity:.85}
   .card:hover,.service:hover,.practice:hover,.note:hover,.method:hover,.glass-form:hover,.price-card:hover,.break-card:hover,.contact-box:hover,.sig-card:hover{box-shadow:0 10px 28px rgba(10,37,64,.10),0 0 22px rgba(79,195,247,.25)}
-  .card h3,.service h3,.practice h3,.price-card h3,.method h3,.note h3{color:#0a2540}
+  .card h3,.service h3,.practice h3,.price-card h3,.method h3,.note h3,.break-card h3{color:#0a2540}
   .card p,.service p,.service ul,.practice p,.practice ul,.price-card ul,.method p,.note p,.break-card p{color:#33475b}
   .service .scope,.card .scope{color:var(--royal)}
   .service .scope:hover{color:var(--royal-dark)}
@@ -242,6 +242,16 @@
   .decor .bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 30%,rgba(255,255,255,.95) 0%,rgba(255,255,255,.25) 28%,rgba(79,195,247,.12) 60%,rgba(27,106,201,.10) 100%);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 0 14px rgba(255,255,255,.55),0 0 10px rgba(79,195,247,.18);animation:bubbleFloat 9s ease-in-out infinite}
   @keyframes bubbleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
   @media (prefers-reduced-motion: reduce){.decor .bubble{animation:none}}
+</style>
+<style>
+  /* ===== SERVICE HERO GLOW — same soft sky glow as the Home hero ===== */
+  .hero{background:radial-gradient(1150px 520px at 50% -10%,rgba(79,195,247,.42),transparent 75%),radial-gradient(1000px 480px at 50% 112%,rgba(27,106,201,.24),transparent 75%),radial-gradient(700px 420px at 96% 40%,rgba(79,195,247,.22),transparent 70%),linear-gradient(150deg,rgba(255,255,255,.55),rgba(234,244,251,.35) 55%,rgba(255,255,255,.45))}
+  .hero::before{background:radial-gradient(circle,rgba(79,195,247,.55),rgba(79,195,247,0) 70%)}
+  .hero::after{background:radial-gradient(circle,rgba(27,106,201,.35),rgba(27,106,201,0) 70%)}
+  .hero h1{text-shadow:0 0 26px rgba(79,195,247,.55)}
+  .hero-photo img{box-shadow:0 0 0 4px rgba(255,255,255,.75),0 18px 50px rgba(27,106,201,.35),0 0 90px rgba(79,195,247,.5)}
+  .hero-photo-card figcaption{color:#33475b}
+  .hero-photo-card figcaption b{color:#0a2540}
 </style>
 </head>
 <body>
