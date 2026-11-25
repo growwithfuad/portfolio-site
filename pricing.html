@@ -192,9 +192,61 @@
   html *{cursor:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2724%27%20height%3D%2724%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpath%20d%3D%27M9%202h6v7h7v6h-7v7H9v-7H2V9h7z%27%20fill%3D%27%232fbf8f%27%20stroke%3D%27%230a2540%27%20stroke-opacity%3D%27.45%27%20stroke-width%3D%271%27%2F%3E%3C%2Fsvg%3E") 12 12,auto}
   .glass-form input[type="text"],.glass-form input[type="email"],.glass-form input[type="tel"],.glass-form input[type="url"],.glass-form textarea{cursor:text}
 </style>
+<style>
+  /* ===== LIGHT BRAND SAMPLE — LinkedIn post look: pale sky + white, navy headings, black text (2026-11-25) ===== */
+  body{background:radial-gradient(900px 620px at 85% -5%,rgba(79,195,247,.38),transparent 60%),radial-gradient(760px 520px at -8% 32%,rgba(27,106,201,.20),transparent 62%),radial-gradient(620px 460px at 92% 78%,rgba(79,195,247,.28),transparent 60%),linear-gradient(180deg,#eaf4fb 0%,#ffffff 55%,#eaf4fb 100%);color:#10222e}
+  .decor .star{display:none}
+  .decor .orb{opacity:.55}
+  .decor .plusbg{color:var(--teal)}
+  header{background:linear-gradient(150deg,rgba(255,255,255,.72),rgba(255,255,255,.45) 60%,rgba(234,244,251,.55));border-bottom:1px solid rgba(159,220,255,.55)}
+  header:hover{border-bottom-color:rgba(27,106,201,.5);box-shadow:0 4px 18px rgba(10,37,64,.08)}
+  .logo{color:#0a2540}
+  .nav-links a{color:#0a2540}
+  .nav-links a:hover{color:var(--royal)}
+  .hero{background:linear-gradient(150deg,rgba(255,255,255,.55),rgba(234,244,251,.35) 55%,rgba(255,255,255,.45));border-bottom:1px solid rgba(159,220,255,.4)}
+  .hero:hover{box-shadow:none}
+  .hero h1{color:#0a2540}
+  .hero p{color:#1c3448}
+  .section-light{background:#fff}
+  h2{color:#0a2540}
+  .lead{color:#33475b}
+  .about p,.story p{color:#33475b}
+  .bridge{color:#1c3448}
+  .trust-strip{color:#33475b}
+  .card,.service,.practice,.note,.method,.glass-form,.price-card,.break-card,.contact-box,.sig-card{background:linear-gradient(150deg,rgba(255,255,255,.72),rgba(255,255,255,.42) 46%,rgba(234,244,251,.55));border:1px solid rgba(255,255,255,.75);box-shadow:0 10px 28px rgba(10,37,64,.10),inset 0 1px 0 rgba(255,255,255,.9)}
+  .card::before,.service::before,.practice::before,.note::before,.method::before,.glass-form::before,.price-card::before,.break-card::before,.contact-box::before,.sig-card::before{background:linear-gradient(150deg,rgba(255,255,255,.95),rgba(27,106,201,.35) 40%,rgba(79,195,247,.6));opacity:.85}
+  .card:hover,.service:hover,.practice:hover,.note:hover,.method:hover,.glass-form:hover,.price-card:hover,.break-card:hover,.contact-box:hover,.sig-card:hover{box-shadow:0 10px 28px rgba(10,37,64,.10),0 0 22px rgba(79,195,247,.25)}
+  .card h3,.service h3,.practice h3,.price-card h3,.method h3,.note h3{color:#0a2540}
+  .card p,.service p,.service ul,.practice p,.practice ul,.price-card ul,.method p,.note p,.break-card p{color:#33475b}
+  .service .scope,.card .scope{color:var(--royal)}
+  .service .scope:hover{color:var(--royal-dark)}
+  .contact-box p,.sig-card p{color:#33475b}
+  .sig-card .name{color:#0a2540}
+  .price-card .pname,.pt .pname{color:var(--royal)}
+  .price-card .amount,.pt .amount{color:var(--royal)}
+  .price-card .delivery{color:var(--royal)}
+  .pt .delivery{color:#33475b}
+  .pkg-nick{color:#0a2540}
+  .pfor,.honesty{color:#33475b}
+  .method .addr{color:var(--royal)}
+  .note .kicker{color:var(--royal)}
+  .btn-ghost{color:var(--royal);border-color:var(--royal)}
+  .btn-ghost:hover{background:rgba(27,106,201,.08)}
+  .glass-form input,.glass-form textarea,.glass-form select{background:rgba(255,255,255,.65);color:#10222e;border:1px solid rgba(27,106,201,.3)}
+  .glass-form input::placeholder,.glass-form textarea::placeholder{color:#6b8296}
+  .glass-form .fnote{color:#33475b}
+  .glass-form .fnote a{color:var(--royal)}
+  footer{background:#0a2540;border-top:1px solid #0a2540;color:#cfe6fa}
+  footer a{color:#fff}
+
+  /* Water-glass bubbles — soft, translucent, slow float */
+  .decor .bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 30%,rgba(255,255,255,.95) 0%,rgba(255,255,255,.25) 28%,rgba(79,195,247,.12) 60%,rgba(27,106,201,.10) 100%);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 0 14px rgba(255,255,255,.55),0 0 10px rgba(79,195,247,.18);animation:bubbleFloat 9s ease-in-out infinite}
+  @keyframes bubbleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @media (prefers-reduced-motion: reduce){.decor .bubble{animation:none}}
+</style>
 </head>
 <body>
-<div class="decor" aria-hidden="true">
+<div class="decor" aria-hidden="true"><span class="bubble" style="top:12%;left:78%;width:46px;height:46px"></span><span class="bubble" style="top:34%;left:6%;width:26px;height:26px;animation-delay:-3s"></span><span class="bubble" style="top:62%;left:88%;width:60px;height:60px;animation-delay:-6s"></span><span class="bubble" style="top:80%;left:16%;width:18px;height:18px;animation-delay:-2s"></span><span class="bubble" style="top:48%;left:44%;width:34px;height:34px;animation-delay:-4.5s"></span>
 <span class="star" style="top:8%;left:12%;width:3px;height:3px;opacity:.9"></span>
 <span class="star" style="top:16%;left:58%;width:2px;height:2px;opacity:.7"></span>
 <span class="star" style="top:6%;left:82%;width:3px;height:3px;opacity:.8"></span>
